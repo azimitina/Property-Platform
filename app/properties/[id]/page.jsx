@@ -8,7 +8,9 @@ import PropertyImages from "@/components/PropertyImages";
 
 const PropertyPage = async ({ params }) => {
   await connectDB();
-  const property = await Property.findById(params.id).lean();
+  const propertyData = await Property.findById(params.id).lean();
+
+  const property = JSON.parse(JSON.stringify(propertyData));
 
   if (!property) {
     return (
