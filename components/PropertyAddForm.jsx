@@ -80,10 +80,10 @@ const PropertyAddForm = () => {
         />
         <input
           type="text"
-          id="zipcode"
-          name="location.zipcode"
+          id="postcode"
+          name="location.postcode"
           className="border rounded w-full py-2 px-3 mb-2"
-          placeholder="Zipcode"
+          placeholder="Postcode"
         />
       </div>
 

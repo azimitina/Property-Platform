@@ -9,7 +9,7 @@
       "street": "120 George Street",
       "city": "Sydney",
       "state": "NSW",
-      "zipcode": "2000"
+      "postcode": "2000"
     },
     "beds": 2,
     "baths": 1,
@@ -54,7 +54,7 @@
       "street": "45 King Street",
       "city": "Melbourne",
       "state": "VIC",
-      "zipcode": "3000"
+      "postcode": "3000"
     },
     "beds": 1,
     "baths": 1,
@@ -98,7 +98,7 @@
       "street": "500 Kent Street",
       "city": "Sydney",
       "state": "NSW",
-      "zipcode": "2000"
+      "postcode": "2000"
     },
     "beds": 3,
     "baths": 2,
@@ -144,7 +144,7 @@
       "street": "123 Harbour Street",
       "city": "Melbourne",
       "state": "VIC",
-      "zipcode": "3000"
+      "postcode": "3000"
     },
     "beds": 1,
     "baths": 1,
@@ -178,7 +178,7 @@
       "street": "75 Pitt Street",
       "city": "Brisbane",
       "state": "QLD",
-      "zipcode": "4000"
+      "postcode": "4000"
     },
     "beds": 1,
     "baths": 1,
@@ -214,7 +214,7 @@
       "street": "456 Beach Road",
       "city": "Sydney",
       "state": "NSW",
-      "zipcode": "2000"
+      "postcode": "2000"
     },
     "beds": 4,
     "baths": 3,
@@ -250,7 +250,7 @@
       "street": "789 Bush Lane",
       "city": "Sydney",
       "state": "NSW",
-      "zipcode": "2000"
+      "postcode": "2000"
     },
     "beds": 2,
     "baths": 1,
@@ -285,7 +285,7 @@
       "street": "5 Wentworth Avenue",
       "city": "Sydney",
       "state": "NSW",
-      "zipcode": "2000"
+      "postcode": "2000"
     },
     "beds": 3,
     "baths": 2,
@@ -320,7 +320,7 @@
       "street": "5 Wentworth Avenue",
       "city": "Sydney",
       "state": "NSW",
-      "zipcode": "2000"
+      "postcode": "2000"
     },
     "beds": 4,
     "baths": 3,
@@ -356,7 +356,7 @@
       "street": "157 Liverpool Street,",
       "city": "Sydney",
       "state": "NSW",
-      "zipcode": "2000"
+      "postcode": "2000"
     },
     "beds": 2,
     "baths": 1,

@@ -88,11 +88,11 @@ const PropertyEditForm = ({ property }) => {
         />
         <input
           type="text"
-          id="zipcode"
-          name="location.zipcode"
+          id="postcode"
+          name="location.postcode"
           className="border rounded w-full py-2 px-3 mb-2"
-          defaultValue={property.location.zipcode}
-          placeholder="Zipcode"
+          defaultValue={property.location.postcode}
+          placeholder="Postcode"
         />
       </div>
 

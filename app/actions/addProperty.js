@@ -28,7 +28,7 @@ async function addProperty(formData) {
       street: formData.get("location.street"),
       city: formData.get("location.city"),
       state: formData.get("location.state"),
-      zipcode: formData.get("location.zipcode"),
+      postcode: formData.get("location.postcode"),
     },
     beds: formData.get("beds"),
     baths: formData.get("baths"),
@@ -65,6 +65,7 @@ async function addProperty(formData) {
   }
 
   propertyData.images = imageUrls;
+
   const newProperty = new Property(propertyData);
   await newProperty.save();
 
