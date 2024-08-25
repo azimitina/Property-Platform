@@ -4,9 +4,8 @@ import Property from "@/models/Property";
 import { getSessionUser } from "@/utils/getSessionUser";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import cloudinary from "@/config/cloudinary";
 
-async function addProperty(formData) {
+async function updateProperty(propertyId, formData) {
   await connectDB();
   const sessionUser = await getSessionUser();
 
@@ -16,8 +15,13 @@ async function addProperty(formData) {
 
   const { userId } = sessionUser;
 
+  const existingProperty = await Property.findById(propertyId);
+
+  if (existingProperty.owner.toString() !== userId) {
+    throw new Error("You are not authorized to update this property");
+  }
+
   const amenities = formData.getAll("amenities");
-  const images = formData.getAll("images").filter((image) => image.name !== "");
 
   const propertyData = {
     owner: userId,
@@ -46,30 +50,18 @@ async function addProperty(formData) {
     },
   };
 
-  const imageUrls = [];
+  const updatedProperty = await Property.findByIdAndUpdate(
+    propertyId,
+    propertyData
+  );
 
-  for (const image of images) {
-    const imageBuffer = await image.arrayBuffer();
-    const imageArray = Array.from(new Uint8Array(imageBuffer));
-    const imageBase64 = Buffer.from(imageArray).toString("base64");
-
-    // Making a request to cloudinary to upload image
-    const { secure_url } = await cloudinary.uploader.upload(
-      `data:image/jpeg;base64,${imageBase64}`,
-      {
-        folder: "propertyplatform",
-      }
-    );
-
-    imageUrls.push(secure_url);
+  if (!updatedProperty) {
+    throw new Error("Failed to update property");
   }
 
-  propertyData.images = imageUrls;
-  const newProperty = new Property(propertyData);
-  await newProperty.save();
-
   revalidatePath("/", "layout");
-  redirect(`/properties/${newProperty._id}`);
+
+  redirect(`/properties/${propertyId}`);
 }
 
-export default addProperty;
+export default updateProperty;
