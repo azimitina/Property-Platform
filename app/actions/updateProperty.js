@@ -5,7 +5,7 @@ import { getSessionUser } from "@/utils/getSessionUser";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-async function updateProperty(propertyId, formData) {
+const updateProperty = async (propertyId, formData) => {
   await connectDB();
   const sessionUser = await getSessionUser();
 
@@ -62,6 +62,6 @@ async function updateProperty(propertyId, formData) {
   revalidatePath("/", "layout");
 
   redirect(`/properties/${propertyId}`);
-}
+};
 
 export default updateProperty;

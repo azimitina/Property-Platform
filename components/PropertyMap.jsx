@@ -63,7 +63,11 @@ const PropertyMap = ({ property }) => {
   }
 
   if (geocodeError) {
-    return <div className="text-xl">Failed to load map</div>;
+    return (
+      <div className="text-xl">
+        The address for this property couldn't be found.
+      </div>
+    );
   }
 
   return (
