@@ -5,7 +5,7 @@ import { getSessionUser } from "@/utils/getSessionUser";
 import profileDefault from "@/assets/images/profile.png";
 import ProfileProperties from "@/components/ProfileProperties";
 
-const profilePage = async () => {
+const ProfilePage = async () => {
   await connectDB();
   const { userId, user } = await getSessionUser();
 
@@ -55,4 +55,4 @@ const profilePage = async () => {
   );
 };
 
-export default profilePage;
+export default ProfilePage;
