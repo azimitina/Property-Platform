@@ -1,6 +1,6 @@
 import Properties from "@/components/Properties";
 
-const PropertiesPage = () => {
+const PropertiesPage = ({ searchParams: { page = 1, pageSize = 6 } }) => {
   return (
     <>
       <section className="bg-blue-700 py-4">
@@ -8,7 +8,7 @@ const PropertiesPage = () => {
           Properties
         </h1>
       </section>
-      <Properties />
+      <Properties page={parseInt(page)} pageSize={parseInt(pageSize)} />
     </>
   );
 };
